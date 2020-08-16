@@ -4,9 +4,9 @@ pipeline {
         stage("check Buildtool Versions") {
             steps {
                 sh '''
+                echo "Checking versions"
                 java -version
                 mvn -v
-                gradle -v
                 '''
             }
         }
