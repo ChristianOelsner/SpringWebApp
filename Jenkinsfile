@@ -2,10 +2,9 @@ pipeline {
     agent any
     stages {
         stage("check Java Version") {
-            sh 'java -version'
-        }
-        stage("Check Maven Version") {
-            sh 'mvn -version'
+            steps {
+                sh 'java -version'
+            }
         }
         stage('Build') {
             steps {
