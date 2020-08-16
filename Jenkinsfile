@@ -1,9 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage("check Java Version") {
+        stage("check Buildtool Versions") {
             steps {
-                sh 'java -version'
+                sh '''
+                java -version
+                mvn -v
+                gradle -v
+                '''
             }
         }
         stage('Build') {
